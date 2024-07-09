@@ -16,30 +16,67 @@
       </div>
       <div class="info">
         <a href="/profile" class="d-block">
-            <b>{{Auth::user()->name}}</b>
+            <b>{{ Auth::user()->name }}</b>
         </a>
       </div>
     </div>
     <!-- Sidebar Menu -->
     <nav class="mt-2">
-      <a href="/dashboard" class="nav-link d-flex align-items-center">
-        <i class="nav-icon fas fa-archive"></i>
-        <p class="ml-2">Dashboard</p>
+      <a href="/dashboard" class="nav-link d-flex align-items-center {{ Request::is('dashboard') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-chart-line"></i>
+        <p class="ml-2 mb-0">Dashboard</p>
       </a>
-      <a href="/arsip-surat" class="nav-link d-flex align-items-center">
-        <i class="nav-icon fas fa-archive"></i>
-        <p class="ml-2">Arsip Surat</p>
+      <a href="/arsip-surat" class="nav-link d-flex align-items-center {{ Request::is('arsip-surat') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-envelope"></i>
+        <p class="ml-2 mb-0">Arsip Surat</p>
       </a>
-      <a href="/kategori" class="nav-link d-flex align-items-center">
-        <i class="nav-icon fas fa-archive"></i>
-        <p class="ml-2">Kategori</p>
+      <a href="/kategori" class="nav-link d-flex align-items-center {{ Request::is('kategori') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-list"></i>
+        <p class="ml-2 mb-0">Kategori</p>
       </a>
-      <a href="/about" class="nav-link d-flex align-items-center">
-        <i class="nav-icon fas fa-archive"></i>
-        <p class="ml-2">About</p>
+      <a href="/about" class="nav-link d-flex align-items-center {{ Request::is('about') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-user"></i>
+        <p class="ml-2 mb-0">About</p>
       </a>
-    </nav>  
+    </nav>
     <!-- /.sidebar-menu -->
   </div>
   <!-- /.sidebar -->
 </aside>
+
+{{-- @section('custom-css') --}}
+<style>
+  .nav-link {
+    padding: 10px 10px;
+    color: #4b4b4b;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .nav-link i {
+    min-width: 24px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .nav-link p {
+    margin-bottom: 0;
+    line-height: 1.5;
+    vertical-align: middle;
+  }
+
+  .nav-link:hover {
+    background-color: #005fc5;
+    color: #fff;
+  }
+
+  .nav-link.active {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .nav-link.active i {
+    color: white;
+  }
+</style>
+{{-- @endsection --}}

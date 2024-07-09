@@ -16,7 +16,10 @@ class LoginController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard.dashboard');
+        $kategori = DB::table('kategoris')->count();
+        $arsip = DB::table('arsips')->count();
+
+        return view('dashboard.dashboard', compact('kategori', 'arsip'));
     }
 
     public function loginUser(Request $request)
@@ -31,13 +34,10 @@ class LoginController extends Controller
             'password' => $request->password
         ])) {
             $request->session()->regenerate();
-
-            return redirect()->intended('dashboard');
+            return redirect('dashboard')->with('success', 'Login berhasil!');
         }
 
-        return back()->withErrors([
-            'username' => 'The provided credentials do not match our records.',
-        ]);
+        return back()->with('error', 'Cek kembali data login anda!');
     }    
 
     public function logout(Request $request)

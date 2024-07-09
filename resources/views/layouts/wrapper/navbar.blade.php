@@ -8,11 +8,6 @@
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="/profile" style="color: rgb(255, 255, 255)">
-                <img src="{{ asset('dist/img/avatar.png')}}" class="rounded-circle" alt="Profile Picture" style="width: 30px; height: 30px; margin-right: 5px;">
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" role="button">
                 <b id="clock" style="color: rgb(255, 255, 255)">
                 </b> &nbsp;

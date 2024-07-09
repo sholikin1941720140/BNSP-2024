@@ -24,8 +24,18 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Silahkan Login Terlebih Dahulu</p>
+                @if($message=Session::get('error'))
+                    <div class="alert alert-danger" role="alert">
+                        <div class="alert-text">{{ucwords($message)}}</div>
+                    </div>
+                @endif
                 <form action="{{ url('login-user') }}" method="post">
                     @csrf
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="input-group mb-3">
                     <input type="username" name="username" class="form-control" placeholder="Masukkan Username">
                     <div class="input-group-append">
