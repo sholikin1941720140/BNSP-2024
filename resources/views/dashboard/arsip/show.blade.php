@@ -89,9 +89,9 @@
                                     </div>
                                 </div>
                                 <div class="card-footer" align="right">
-                                    <a href="{{ url('/arsip-surat') }}" class="btn btn-warning">Batal</a>
+                                    <a href="{{ url('/arsip-surat') }}" class="btn btn-warning">Kembali</a>
                                     &nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="submit" class="btn btn-primary">Simpan/Edit</button>
                                 </div>
                             </form>                                             
                         </div>

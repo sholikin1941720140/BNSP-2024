@@ -72,22 +72,53 @@ class ArsipController extends Controller
             ->where('ar.id', $id)
             ->first();
         $kategori = DB::table('kategoris')->get();
-        $data->file = public_path('uploads').'/'.$data->file;
 
         return view('dashboard.arsip.show', compact('data', 'kategori'));
     }
 
-    public function showPdf($filename)
+    public function update(Request $request, $id)
     {
-        $pathToFile = storage_path('uploads/' . $filename);
+        // return response()->json($request->all());
+        $validator = Validator::make($request->all(), [
+            'no_surat' => 'required',
+            'kategori' => 'required',
+            'judul' => 'required',
+            // 'file' => 'mimes:pdf|max:2048',
+        ]);
+        
+        if($validator->fails()){
+            return redirect()->back()->with('error', 'Data gagal diupdate!');
+        }
 
-        if (file_exists($pathToFile)) {
-            return response()->file($pathToFile, [
-                'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'inline; filename="'.basename($pathToFile).'"'
+        $now = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
+        if($request->file('file')){
+            $file = $request->file('file');
+            $fileName = time().'_'.$file->getClientOriginalName();
+            $file->move(public_path('uploads'), $fileName);
+
+            $data = DB::table('arsips')->where('id', $id)->first();
+            unlink(public_path('uploads').'/'.$data->file);
+
+            DB::table('arsips')->where('id', $id)->update([
+                'no_surat' => $request->no_surat,
+                'kategori_id' => $request->kategori,
+                'judul' => $request->judul,
+                'file' => $fileName,
+                'updated_at' => Carbon::now(),
             ]);
-        } else {
-            abort(404, 'File not found');
+
+            toast('Data berhasil diupdate', 'success');
+            return redirect('arsip-surat');
+        }else{
+            DB::table('arsips')->where('id', $id)->update([
+                'no_surat' => $request->no_surat,
+                'kategori_id' => $request->kategori,
+                'judul' => $request->judul,
+                'updated_at' => Carbon::now(),
+            ]);
+
+            toast('Data berhasil diupdate', 'success');
+            return redirect('arsip-surat');
         }
     }
 

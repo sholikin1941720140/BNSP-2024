@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="card-footer" align="right">
-                        <a href="{{ url('/kategori') }}" class="btn btn-warning">Batal</a>
+                        <a href="{{ url('/kategori') }}" class="btn btn-warning">Kembali</a>
                         &nbsp;&nbsp;
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>

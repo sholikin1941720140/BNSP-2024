@@ -40,42 +40,6 @@
             </a>
             </div>
         </div>
-        <div class="row mb-2">
-            <div class="col-12">
-            <div class="card">
-                {{-- <div class="card-body" style="background-color:#1166d8;">
-                <form action="{{url('pembelian/supplier')}}" id="form-option">
-                <div class="row">
-                    <div class="col-md-4">
-                    <div class="form-group">
-                        <label style="color: white">Filter Berdasarkan</label>
-                        <select name="option" class="select2" style="width: 100%; height: 100%" >
-                        <option disabled selected>Pilih Filter</option>
-                        @foreach($option as $key => $value)
-                            <option {{$request->option == $key ? 'selected':''}} value="{{$key}}">{{$value}}</option>
-                        @endforeach
-                        </select>
-                    </div>
-                    </div>
-                    <div class="col-md-8">
-                    <div class="form-group">
-                        <label style="color: white">Masukkan Kata Kunci</label>
-                        <div class="input-group">
-                        <input type="search" name="search" class="form-control" placeholder="Cari data..." value="{{$request->search}}">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-default">
-                            <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </form>
-                </div> --}}
-            </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-12">
             <div class="card">
@@ -167,7 +131,7 @@
         $('#example2').DataTable({
         "paging": true,
         "lengthChange": false,
-        "searching": false,
+        "searching": true,
         "ordering": true,
         "info": true,
         "autoWidth": false,
