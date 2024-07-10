@@ -54,10 +54,10 @@
                     </div>
                     <div class="row">
                     <div class="col-8">
-                        <div class="icheck-primary">
+                        {{-- <div class="icheck-primary">
                         <input type="checkbox" id="remember">
                         <a href="forgot-password.html">Lupa Password?</a>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
