@@ -23,6 +23,11 @@
             </a>
             <form id="logout-form" action="{{url('/logout')}}" method="GET" class="d-none">
             @csrf
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
             </form>
         </li>
     </ul>

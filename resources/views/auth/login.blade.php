@@ -14,13 +14,30 @@
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+    <style>
+        body {
+            background: url('{{url('dist/img/bg2.png')}}') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-box {
+            background: rgba(27, 22, 148, 0.8);
+            padding: 5px;
+            border-radius: 3px;
+        }
+    </style>
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition">
     <div class="login-box">
-    <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
-            <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>SIMAS</b></a>
+        <!-- /.login-logo -->
+        <div class="card card-outline">
+            <div class="card-header text-center d-flex justify-content-center align-items-center">
+                <img src="{{url('dist/img/pakisaji.jpg')}}" alt="SIMAS Logo" class="brand-image img-circle elevation-3" style="width: 40px; height: 40px;">
+                <a href="/" class="h1 ml-2"><b>SIMAS</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Silahkan Login Terlebih Dahulu</p>
@@ -37,33 +54,33 @@
                         </div>
                     @endif
                     <div class="input-group mb-3">
-                    <input type="username" name="username" class="form-control" placeholder="Masukkan Username">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
+                        <input type="username" name="username" class="form-control" placeholder="Masukkan Username">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <div class="input-group mb-3">
-                    <input type="password" name="password" class="form-control" placeholder="Masukkan Password">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+                        <input type="password" name="password" class="form-control" placeholder="Masukkan Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
                         </div>
                     </div>
-                    </div>
                     <div class="row">
-                    <div class="col-8">
-                        {{-- <div class="icheck-primary">
-                        <input type="checkbox" id="remember">
-                        <a href="forgot-password.html">Lupa Password?</a>
-                        </div> --}}
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                    </div>
-                    <!-- /.col -->
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                            <input type="checkbox" id="remember">
+                            <a href="forgot-password.html">Lupa Password?</a>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                        <!-- /.col -->
                     </div>
                 </form>
             </div>
@@ -71,13 +88,13 @@
         </div>
         <!-- /.card -->
     </div>
-<!-- /.login-box -->
+    <!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
 </body>
 </html>

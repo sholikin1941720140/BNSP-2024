@@ -15,7 +15,7 @@
       User:
       </div>
       <div class="info">
-        <a href="/profile" class="d-block">
+        <a href="/about" class="d-block">
             <b>{{ Auth::user()->name }}</b>
         </a>
       </div>
