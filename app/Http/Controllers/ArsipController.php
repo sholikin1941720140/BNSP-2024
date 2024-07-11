@@ -37,10 +37,10 @@ class ArsipController extends Controller
             'file' => 'required|mimes:pdf|max:2048',
         ]);
 
-        $surat = DB::table('arsips')->where('no_surat', $request->no_surat)->first();
-        if ($surat) {
-            return redirect()->back()->with('error', 'Nomor surat sudah ada!');
-        }
+        // $surat = DB::table('arsips')->where('no_surat', $request->no_surat)->first();
+        // if ($surat) {
+        //     return redirect()->back()->with('error', 'Nomor surat sudah ada!');
+        // }
 
         if ($validator->fails()) {
             toast('Data gagal disimpan', 'error');

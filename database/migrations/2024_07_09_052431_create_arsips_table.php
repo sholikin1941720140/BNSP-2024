@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('arsips', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('kategori_id');
-            $table->string('no_surat')->unique();
+            $table->string('no_surat');
             $table->string('judul');
             $table->string('file');
             $table->timestamps();
